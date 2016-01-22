@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Countries View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CountriesViewController" customModule="Countries" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="P5K-lc-OoS">
+                                <rect key="frame" x="20" y="64" width="560" height="516"/>
+                            </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jvB-Ib-ZjF">
+                                <rect key="frame" x="20" y="28" width="560" height="29"/>
+                                <segments>
+                                    <segment title="List mode"/>
+                                    <segment title="Map mode"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlIndexChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="NUC-Am-S17"/>
+                                </connections>
+                            </segmentedControl>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="y1y-W5-rtj">
+                                <rect key="frame" x="20" y="64" width="560" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7CN-dF-0Sa">
+                                <rect key="frame" x="20" y="108" width="560" height="472"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7CN-dF-0Sa" firstAttribute="top" secondItem="y1y-W5-rtj" secondAttribute="bottom" id="04H-S6-hKN"/>
+                            <constraint firstItem="P5K-lc-OoS" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="1kL-LW-xB1"/>
+                            <constraint firstItem="y1y-W5-rtj" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="56P-zB-Gan"/>
+                            <constraint firstItem="y1y-W5-rtj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Aoo-cs-hCk"/>
+                            <constraint firstItem="jvB-Ib-ZjF" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="E2h-ky-EGc"/>
+                            <constraint firstItem="jvB-Ib-ZjF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="EHp-W4-E3N"/>
+                            <constraint firstItem="7CN-dF-0Sa" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Hwn-7b-CS7"/>
+                            <constraint firstItem="P5K-lc-OoS" firstAttribute="top" secondItem="jvB-Ib-ZjF" secondAttribute="bottom" constant="8" id="PRT-sh-SVt"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7CN-dF-0Sa" secondAttribute="bottom" constant="20" id="R2F-Ik-BKu"/>
+                            <constraint firstItem="7CN-dF-0Sa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="RJh-r9-3j3"/>
+                            <constraint firstItem="P5K-lc-OoS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="hzt-sH-KlR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="P5K-lc-OoS" secondAttribute="bottom" constant="20" id="lGt-lU-ni6"/>
+                            <constraint firstItem="jvB-Ib-ZjF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="qCZ-ag-XEi"/>
+                            <constraint firstItem="y1y-W5-rtj" firstAttribute="top" secondItem="jvB-Ib-ZjF" secondAttribute="bottom" constant="8" id="yXK-f5-EE4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="P5K-lc-OoS" id="Ndi-pg-8Qr"/>
+                        <outlet property="searchBar" destination="y1y-W5-rtj" id="rwl-Rz-Tag"/>
+                        <outlet property="segmentedControl" destination="jvB-Ib-ZjF" id="yv4-bI-tpv"/>
+                        <outlet property="tableView" destination="7CN-dF-0Sa" id="5Th-DJ-FNc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245" y="337"/>
+        </scene>
+    </scenes>
+</document>
