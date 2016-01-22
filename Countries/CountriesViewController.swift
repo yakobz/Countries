@@ -57,10 +57,9 @@ class CountriesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBAction func segmentedControlIndexChanged(sender: UISegmentedControl) {
         if self.segmentedControl.selectedSegmentIndex == 0 {
-            self.view.insertSubview(mapView, atIndex: 0)
+            self.view.sendSubviewToBack(self.mapView)
         } else {
-            self.view.insertSubview(mapView, aboveSubview: self.searchBar)
-            self.view.insertSubview(mapView, aboveSubview: self.tableView)
+            self.view.bringSubviewToFront(self.mapView)
         }
         
     }
